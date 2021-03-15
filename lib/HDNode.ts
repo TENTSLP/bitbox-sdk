@@ -4,7 +4,6 @@ import { Address } from "./Address"
 
 // consts
 const Bitcoin = require("@bitcoin-dot-com/bitcoincashjs2-lib")
-const coininfo = require("coininfo")
 const bip32utils = require("bip32-utils")
 
 export class HDNode {
@@ -19,13 +18,12 @@ export class HDNode {
   ): bcl.HDNode {
     let bitcoincash: any
     if (network === "bitcoincash" || network === "mainnet")
-      bitcoincash = coininfo.bitcoincash.main
-    else bitcoincash = coininfo.bitcoincash.test
+      bitcoincash = Bitcoin.networks.tent
+    else bitcoincash = Bitcoin.networks.tentTest
 
-    const bitcoincashBitcoinJSLib = bitcoincash.toBitcoinJS()
     return Bitcoin.HDNode.fromSeedBuffer(
       rootSeedBuffer,
-      bitcoincashBitcoinJSLib
+      bitcoincash
     )
   }
 
@@ -59,20 +57,18 @@ export class HDNode {
 
   public fromXPriv(xpriv: string): bcl.HDNode {
     let bitcoincash: any
-    if (xpriv[0] === "x") bitcoincash = coininfo.bitcoincash.main
-    else if (xpriv[0] === "t") bitcoincash = coininfo.bitcoincash.test
+    if (xpriv[0] === "x") bitcoincash = Bitcoin.networks.tent
+    else if (xpriv[0] === "t") bitcoincash = Bitcoin.networks.tentTest
 
-    const bitcoincashBitcoinJSLib = bitcoincash.toBitcoinJS()
-    return Bitcoin.HDNode.fromBase58(xpriv, bitcoincashBitcoinJSLib)
+    return Bitcoin.HDNode.fromBase58(xpriv, bitcoincash)
   }
 
   public fromXPub(xpub: string): bcl.HDNode {
     let bitcoincash: any
-    if (xpub[0] === "x") bitcoincash = coininfo.bitcoincash.main
-    else if (xpub[0] === "t") bitcoincash = coininfo.bitcoincash.test
+    if (xpub[0] === "x") bitcoincash = Bitcoin.networks.tent
+    else if (xpub[0] === "t") bitcoincash = Bitcoin.networks.tentTest
 
-    const bitcoincashBitcoinJSLib: any = bitcoincash.toBitcoinJS()
-    return Bitcoin.HDNode.fromBase58(xpub, bitcoincashBitcoinJSLib)
+    return Bitcoin.HDNode.fromBase58(xpub, bitcoincash)
   }
 
   public derivePath(hdnode: bcl.HDNode, path: string): bcl.HDNode {
