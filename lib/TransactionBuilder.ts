@@ -47,6 +47,8 @@ export class TransactionBuilder {
     else bitcoincash = Bitcoin.networks.tentTest
 
     this.transaction = new Bitcoin.TransactionBuilder(bitcoincash)
+    this.transaction.version = 4
+    this.transaction.versionGroupId = 0x892F2085
     this.DEFAULT_SEQUENCE = 0xffffffff
     this.hashTypes = {
       SIGHASH_ALL: 0x01,
