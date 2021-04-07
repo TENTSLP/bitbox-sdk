@@ -49,7 +49,7 @@ export class Address {
         tent = Bitcoin.networks.tent
         break
       case "tenttest":
-        tent = Bitcoin.networks.tent
+        tent = Bitcoin.networks.tentTest
         break
     }
 
