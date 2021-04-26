@@ -1,35 +1,28 @@
 "use strict";
 /// <reference path="./lib/interfaces/vendors.d.ts"/>
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
-};
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./lib/Address"), exports);
-__exportStar(require("./lib/BITBOX"), exports);
-__exportStar(require("./lib/BitcoinCash"), exports);
-__exportStar(require("./lib/Block"), exports);
-__exportStar(require("./lib/Blockchain"), exports);
-__exportStar(require("./lib/CashAccounts"), exports);
-__exportStar(require("./lib/Control"), exports);
-__exportStar(require("./lib/Crypto"), exports);
-__exportStar(require("./lib/ECPair"), exports);
-__exportStar(require("./lib/Generating"), exports);
-__exportStar(require("./lib/HDNode"), exports);
-__exportStar(require("./lib/Mining"), exports);
-__exportStar(require("./lib/Mnemonic"), exports);
-__exportStar(require("./lib/Price"), exports);
-__exportStar(require("./lib/RawTransactions"), exports);
-__exportStar(require("./lib/Schnorr"), exports);
-__exportStar(require("./lib/Script"), exports);
-__exportStar(require("./lib/Socket"), exports);
-__exportStar(require("./lib/Transaction"), exports);
-__exportStar(require("./lib/TransactionBuilder"), exports);
-__exportStar(require("./lib/Util"), exports);
+__export(require("./lib/Address"));
+__export(require("./lib/BITBOX"));
+__export(require("./lib/BitcoinCash"));
+__export(require("./lib/Block"));
+__export(require("./lib/Blockchain"));
+__export(require("./lib/CashAccounts"));
+__export(require("./lib/Control"));
+__export(require("./lib/Crypto"));
+__export(require("./lib/ECPair"));
+__export(require("./lib/Generating"));
+__export(require("./lib/HDNode"));
+__export(require("./lib/Mining"));
+__export(require("./lib/Mnemonic"));
+__export(require("./lib/Price"));
+__export(require("./lib/RawTransactions"));
+__export(require("./lib/Schnorr"));
+__export(require("./lib/Script"));
+__export(require("./lib/Socket"));
+__export(require("./lib/Transaction"));
+__export(require("./lib/TransactionBuilder"));
+__export(require("./lib/Util"));
 //# sourceMappingURL=index.js.map
