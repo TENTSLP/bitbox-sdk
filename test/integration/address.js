@@ -17,6 +17,8 @@ if (process.env.SERVER === "local")
   bitbox = new BITBOX({ restURL: "http://localhost:3000/v2/" })
 if (process.env.SERVER === "stage")
   bitbox = new BITBOX({ restURL: "https://rest.btctest.net/v2/" })
+if (process.env.SERVER === "custom")
+  bitbox = new BITBOX({ restURL: process.env.SERVERIP })
 
 // Inspect utility used for debugging.
 const util = require("util")
@@ -120,10 +122,10 @@ describe(`#address`, () => {
 
   describe(`#utxo`, () => {
     it(`should GET utxos for a single address`, async () => {
-      const addr = "bitcoincash:qqm8uru433pjygm7q8przw9qw9pacvmvx5cngmqmue"
+      const addr = "bitcoincash:qzzn0zttjrt9jn6a7jfltl0s4270p5sulu5s7hkefw"
 
       const result = await bitbox.Address.utxo(addr)
-      //console.log(`result: ${JSON.stringify(result, null, 2)}`)
+      // console.log(`result: ${JSON.stringify(result, null, 2)}`)
 
       assert.hasAllKeys(result, [
         "utxos",
@@ -146,8 +148,8 @@ describe(`#address`, () => {
 
     it(`should GET utxo details for an array of addresses`, async () => {
       const addr = [
-        "bitcoincash:qqm8uru433pjygm7q8przw9qw9pacvmvx5cngmqmue",
-        "bitcoincash:qpdh9s677ya8tnx7zdhfrn8qfyvy22wj4qa7nwqa5v"
+        "bitcoincash:qzzn0zttjrt9jn6a7jfltl0s4270p5sulu5s7hkefw",
+        "bitcoincash:qrxhw5lmetex26903t59u5ej694akepzqug8sfljrl"
       ]
 
       const result = await bitbox.Address.utxo(addr)
